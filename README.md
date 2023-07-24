@@ -21,14 +21,40 @@ $ go build -o add
 
 ```bashscript
 $ ./add init
-Created new file: 20230330.md
+Created new file: 20230330.txt
 ```
 
 3. Start adding phrases
 
 ```bashscript
 $ ./add 'I want to remember this line'
-Added phrase to file: 20230330.md
+Added phrase to file: 20230330.txt
+```
+
+4. Combine files into a single file (e.g. `combined.txt`)
+
+```bashscript
+$ cat *.txt > combined.txt
+```
+
+5. Navigate through the file with fzf, select a line, and copy to clipboard
+
+```bashscript
+$ fzf < combined.txt | tee >(pbcopy)
+```
+
+<img width="880" alt="CleanShot 2023-07-24 at 16 35 17@2x" src="https://github.com/nancyel/add/assets/76415082/f6a90ad8-3371-4048-a024-a72ba6897faf">
+
+
+6. Or simply, preview files from your terminal (save to `zprofile` for quick access)
+
+```bashscript
+# $HOME/zprofile
+
+# Preview with fzf
+preview() {
+  fzf --preview 'cat {}'
+}
 ```
 
 
