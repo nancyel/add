@@ -34,7 +34,7 @@ func createNewFile() {
 		os.Mkdir(dir, os.ModePerm)
 	}
 
-	filename := time.Now().Format("20060102") + ".md"
+	filename := time.Now().Format("20060102") + ".txt"
 	filepath := dir + "/" + filename
 
 	if _, err := os.Stat(filepath); os.IsNotExist(err) {
@@ -66,7 +66,7 @@ func GrabPhrases() ([]string, error) {
 	dateStr := time.Now().Format("20060102")
 
 	// Construct the filename of the phrases file
-	filename := filepath.Join("phrases", dateStr+".md")
+	filename := filepath.Join("phrases", dateStr+".txt")
 
 	// Read the contents of the phrases file
 	bytes, err := ioutil.ReadFile(filename)
@@ -107,7 +107,7 @@ func addPhrase(phrase string) {
 		return
 	}
 
-	filename := time.Now().Format("20060102") + ".md"
+	filename := time.Now().Format("20060102") + ".txt"
 	filepath := dir + "/" + filename
 
 	f, err := os.OpenFile(filepath, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
