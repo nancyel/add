@@ -118,8 +118,7 @@ func addPhrase(phrase string) {
 
 	defer f.Close()
 
-	t := time.Now().Format("15:04:33")
-	if _, err := f.WriteString("\n" + t + " " + phrase); err != nil {
+	if _, err := f.WriteString("\n" + phrase); err != nil {
 		fmt.Println("Failed to write to file:", err)
 		return
 	}
