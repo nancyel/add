@@ -1,6 +1,6 @@
 ### Workflow
 
-![workflow]("workflow.png")
+![workflow](workflow.png)
 
 ### How to get started
 
